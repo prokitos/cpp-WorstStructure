@@ -73,3 +73,20 @@ void tree::lastprintBinTree(tnode* nodes)
         cout << "  " << nodes->field;
     }
 }
+
+void tree::deleteAllNode()
+{
+    deleteNode(root);
+}
+void tree::deleteNode(tnode* curNode)
+{
+    if(curNode->left != NULL)
+    {
+        deleteNode(curNode->left);
+    }
+    if(curNode->right != NULL)
+    {
+        deleteNode(curNode->right);
+    }
+    delete curNode;
+}

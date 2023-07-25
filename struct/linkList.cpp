@@ -2,7 +2,7 @@
 
 void lList::insert(int d)
 {
-    node* tmp = new node;
+    lListNode* tmp = new lListNode;
     tmp->field = d;
     tmp->next = NULL;
 
@@ -19,7 +19,7 @@ void lList::insert(int d)
 
 };
 
-void lList::show(node* nod)
+void lList::show(lListNode* nod)
 {
     if(nod != NULL)
     {

@@ -18,7 +18,12 @@ public:
     queue(){};
     ~queue()
     {
-        // delete all node
+        while(lastElement != NULL && firstElement != NULL)
+        {
+            queNode* temp = firstElement;
+            firstElement = firstElement->next;
+            delete temp;
+        }
     };
 
     string remove(); // забрать и удалить первый

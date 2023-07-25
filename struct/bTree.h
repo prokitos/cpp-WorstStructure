@@ -20,6 +20,10 @@ class tree
     {
         root = NULL;
     }
+    ~tree()
+    {
+        deleteAllNode();
+    }
     // проверка на пустоту
     int isEmpty()
     {
@@ -35,4 +39,7 @@ class tree
 
     void lastdisplayBinTree();  
     void lastprintBinTree(tnode*);  
+
+    void deleteAllNode();
+    void deleteNode(tnode*);
 };

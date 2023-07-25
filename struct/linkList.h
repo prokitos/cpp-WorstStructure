@@ -4,25 +4,36 @@
 using std::cout;
 using std::string;
 
-struct node 
+// односвязный список
+struct lListNode 
 {
     int field;           // поле данных
-    struct node* next;  // следующй элемент
+    struct lListNode* next;  // следующй элемент
 };
 
 class lList
 {
-    node* firstNode;
-    node* lastNode;
+    lListNode* firstNode;
+    lListNode* lastNode;
 public:
     lList()
     {
         firstNode = NULL;
         lastNode = NULL;
     };
+    ~lList()
+    {
+        while(firstNode != NULL)
+        {
+            lListNode* temp = firstNode;
+            firstNode = firstNode->next;
+            delete temp;
+        }
+    }
     void insert(int d);
-    void show(node* nod);
+    void show(lListNode* nod);
     void showAll();
+    // добавить метод удаления
 
 };
 
