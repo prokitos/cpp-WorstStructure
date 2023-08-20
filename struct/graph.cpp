@@ -6,6 +6,7 @@ void graph::addNode(string nodeName)
     graphNode newElement;
     newElement.name = nodeName;
     newElement.destination;
+    newElement.visited = false;
 
     children[nodeName] = newElement;
 };
@@ -93,7 +94,7 @@ string graph::searchWidth(string firstNode, string secondNode)
         for (size_t i = 0; i < children[firstNode].destination.size(); i++)
         {
             if(children[firstNode].destination.at(i).visited == false)
-                searchDepth(children[firstNode].destination.at(i).name,secondNode);
+                searchWidth(children[firstNode].destination.at(i).name,secondNode);
             
             output += children[firstNode].name;
         }
@@ -118,4 +119,31 @@ string graph::searchThisNode(string firstNode, string secondNode)
     }
 
 return output;
+};
+
+// удалить старые посещения
+void graph::clearVisited()
+{
+    for (auto &element: children)
+    {
+        std::string temps = element.second.name;
+        children[temps].visited = false;
+    }
+
+    output = "нет пути к ноде";
+    searchEnd = false;
+
+};
+
+// удаление связи
+void graph::deleteBond(string firstBond, string secondBond)
+{
+    for (size_t i = 0; i < children[firstBond].destination.size(); i++)
+    {
+        if(children[firstBond].destination[i].name == secondBond)
+        {
+            children[firstBond].destination.erase(children[firstBond].destination.begin() + i);
+            break;
+        }
+    }
 };

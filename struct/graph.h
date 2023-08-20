@@ -10,7 +10,7 @@ struct graphNode
 {
     string name;
     std::vector <graphNode> destination;
-    bool visited = false; // нужен для некоторых видов поиска
+    bool visited; // нужен для некоторых видов поиска
 };
 
 // графы чтото странное, между ними всегда одинаковое расстояние, дичь
@@ -22,7 +22,7 @@ public:
 
     void addNode(string nodeName);
     void addBond(string firstBond, string secondBond);
-    void deleteBond();  // по идее не нужно
+    void deleteBond(string firstBond, string secondBond);
     void printGraph();
     string searchWidth(string firstNode, string secondNode);
     string searchDepth(string firstNode, string secondNode);

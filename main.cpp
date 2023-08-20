@@ -88,9 +88,18 @@ void tempGraph()
     gr.addBond("F","E");
     gr.addBond("E","C");
 
-    //cout << gr.searchDepth("A","E");
-    cout << gr.searchWidth("A","E");
+    //gr.deleteBond("E","C");
+
+    
+    
     //gr.printGraph();
+    cout << std::endl;
+
+    cout << gr.searchWidth("A","E") << std::endl;
+    gr.clearVisited();
+    cout << gr.searchDepth("A","D") << std::endl;
+    gr.clearVisited();
+    // можно просто добавить клеарВизитед в конец поиска, и запускать его автоматом
 
     auto end = std::chrono::steady_clock::now();
     auto diff = end - start;
@@ -126,13 +135,13 @@ int main()
     //int* k = w;
     //cout << k << std::endl;
 
-    //tempGraph();
+    tempGraph();
     
     //tempHash();
 
     //system("pause");
 
-    templList();
+    //templList();
     
 
     return 0;
