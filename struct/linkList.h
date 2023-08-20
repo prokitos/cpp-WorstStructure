@@ -33,7 +33,9 @@ public:
     void insert(int d);
     void show(lListNode* nod);
     void showAll();
-    // добавить метод удаления
+    void deleteFirst();
+
+    void deleteLast(); // Долгий, возможны утечки
 
 };
 

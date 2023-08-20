@@ -100,6 +100,21 @@ void tempGraph()
     // width = 0.3053
 }
 
+void templList()
+{
+    lList deb;
+
+    deb.insert(1);
+    deb.insert(5);
+    deb.insert(2);
+    deb.insert(11);
+
+    //deb.deleteLast();
+    deb.deleteFirst();
+
+    deb.showAll();
+}
+
 int main()
 {
     consoleClear();
@@ -113,10 +128,11 @@ int main()
 
     //tempGraph();
     
-    tempHash();
+    //tempHash();
 
     //system("pause");
 
+    templList();
     
 
     return 0;
