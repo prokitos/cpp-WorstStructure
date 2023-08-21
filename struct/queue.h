@@ -9,7 +9,6 @@ struct queNode
 {
     string data;
     queNode* next;
-
 };
 
 class queue

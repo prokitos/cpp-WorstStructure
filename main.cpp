@@ -44,15 +44,22 @@ void tempHash()
 void tempStack()
 {
     stack deb;
-    deb.push("qwer");
-    deb.push("qqqq");
-    deb.push("www");
+    deb.push(5);
+    deb.push(6);
+    deb.push(1);
+    deb.push(4);
+    deb.push(2);
     
-    deb.pop();
-    deb.pop();
-    deb.pop();
+    //deb.pop();
 
-    cout << deb.peek();
+    deb.popAt(3);
+    deb.showAll();
+
+    //deb.pop();
+    //cout << deb.minimum();
+    //deb.pop();
+
+    //cout << deb.peek();
 }
 
 void tempQueue()
@@ -135,7 +142,8 @@ int main()
     //int* k = w;
     //cout << k << std::endl;
 
-    tempGraph();
+    //tempGraph();
+    tempStack();
     
     //tempHash();
 

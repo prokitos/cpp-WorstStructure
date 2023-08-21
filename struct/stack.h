@@ -7,9 +7,10 @@ using std::string;
 // лучше потом сделать через темплейт, чтобы был не только стринг
 struct stackNode
 {
-    string data;
+    //string data;
+    int data;
     stackNode* prev;
-    // для задачи можно добавить доп поле минимум, отображает минимальный элемент, который был до этого элемента
+    int curMin; 
 };
 
 class stack
@@ -21,10 +22,16 @@ public:
         // delete all node
     };
 
-    string pop(); // забрать и удалить последний элемент
-    void push(string item); // закинуть элемент в конец
-    string peek(); // посмотреть последний элемент
+    int pop(); // забрать и удалить последний элемент
+    void push(int item); // закинуть элемент в конец
+    int peek(); // посмотреть последний элемент
     void isEmpty(); // проверка пустой ли стек
 
+    int minimum(); // получить минимальное значение в стеке за O(1), не работает в PopAt
+    void popAt(int num); // удалить элемент на N позиции, работает долго
+    void showAll();  // показать все элементы
+
+protected:
+    int elementCount = 0;
     stackNode* lastElement = NULL;
 };
